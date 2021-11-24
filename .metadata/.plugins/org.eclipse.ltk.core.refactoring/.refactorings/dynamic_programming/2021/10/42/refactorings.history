@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.dp.makeAsum.AddSum&apos; to &apos;HowSum&apos;&#x0D;&#x0A;- Original project: &apos;dynamic_programming&apos;&#x0D;&#x0A;- Original element: &apos;com.dp.makeAsum.AddSum&apos;&#x0D;&#x0A;- Renamed element: &apos;com.dp.makeAsum.HowSum&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;AddSum&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.dp.makeAsum{AddSum.java[AddSum" matchStrategy="1" name="HowSum" qualified="false" references="true" similarDeclarations="false" stamp="1633948321422" textual="false" version="1.0"/>
+</session>

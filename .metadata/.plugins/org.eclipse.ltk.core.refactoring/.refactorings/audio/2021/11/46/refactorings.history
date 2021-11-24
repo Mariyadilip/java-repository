@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;audio/game-of-thrones-theme-song-ringtone-30782.wav&apos; to &apos;got.wav&apos;" description="Rename resource &apos;game-of-thrones-theme-song-ringtone-30782.wav&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="game-of-thrones-theme-song-ringtone-30782.wav" name="got.wav" stamp="1636366563197" updateReferences="true"/>
+</session>
