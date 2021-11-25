@@ -1,0 +1,5 @@
+package thread.deadlock;
+
+public class WaitingForSameThread {
+
+}

@@ -1,0 +1,5 @@
+package thread.basic;
+
+public class Setting_and_Getting_NameOfThread {
+
+}

@@ -1,0 +1,5 @@
+package thread.prevent_execution_methods;
+
+public class SleepMethod {
+
+}

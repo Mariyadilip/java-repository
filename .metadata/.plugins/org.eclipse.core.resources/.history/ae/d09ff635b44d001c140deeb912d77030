@@ -1,0 +1,28 @@
+package thread.basic;
+
+/*
+ * By default every thread will have default priority
+ * priority range 1 - 10
+ * 
+ * if priority is not within range then, IllegalArgumentException is thrown
+ * 
+ * by default main will have priority 5
+ * then all threads will have the priority of its parent thread(the thread which creates this thread)
+ * 
+ */
+class MyThread extends Thread{
+	
+}
+
+public class ThreadPriorties {
+
+	public static void main(String[] args) {
+		
+		System.out.println(Thread.currentThread().getPriority()); //main thread priority
+		
+		MyThread t = new MyThread();
+		t.start();
+		
+		System.out.println(t.getPriority());
+	}
+}
