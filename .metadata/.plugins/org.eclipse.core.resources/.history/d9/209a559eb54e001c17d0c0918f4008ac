@@ -1,0 +1,56 @@
+package thread.synchronization;
+
+public class SynchronizedBlock_ClassLevel {
+	
+	public static void main(String[] args) {
+		
+		Display3 d = new Display3();
+		MyThread4 t1 = new MyThread4(d);
+		t1.setName("First Thread");
+		MyThread4 t2 = new MyThread3(d);
+		t2.setName("Second Thread");
+		
+		t1.start();t2.start();
+	}
+}
+
+class Display3{
+	
+	public void display() throws InterruptedException {
+		
+		for(int i=1 ; i<=10 ; i++) {
+			Thread.sleep(1000);
+		  System.out.println("Before synchronized "+Thread.currentThread().getName()+" "+i);
+		  
+		}
+		
+		synchronized(this){
+			for(int i=1 ; i<=10 ; i++)
+			{
+				Thread.sleep(1000);
+				System.out.println("In synchronized "+Thread.currentThread().getName()+" "+i);
+			}
+		}
+		
+		for(int i=1; i<=10 ; i++) {
+			Thread.sleep(1000);
+			System.out.println("After synchronized "+Thread.currentThread().getName()+" "+i);
+		}
+	}
+}
+
+class MyThread4 extends Thread{
+	Display3 d;
+	public MyThread4(Display3 d) {
+		this.d = d;
+	}
+	
+	public void run() {
+		try {
+			d.display();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,137 @@
+package thread.synchronization;
+
+public class Mixed {
+
+	public static void main(String[] args) {
+		
+	}
+}
+
+class Display1{
+	
+	static synchronized void display() throws InterruptedException {
+		for(int i=1 ; i<=10 ; i++) {
+			System.out.println("Synchronized static display method "+i);
+			Thread.sleep(1000);
+		}
+	}
+	
+	static synchronized void print() throws InterruptedException {
+		for(int i=1 ; i<=10 ; i++) {
+			System.out.println("Synchronized static print method "+i);
+			Thread.sleep(1000);
+		}
+	}
+	
+	static  void normalStatic() throws InterruptedException {
+		for(int i=1 ; i<=10 ; i++) {
+			System.out.println("Normal static method "+i);
+			Thread.sleep(1000);
+		}
+	}
+	
+	 synchronized void displayNS() throws InterruptedException {
+		for(int i=1 ; i<=10 ; i++) {
+			System.out.println("Synchronized NS display method "+i);
+			Thread.sleep(1000);
+		}
+	}
+	 
+	 synchronized void printNS() throws InterruptedException {
+			for(int i=1 ; i<=10 ; i++) {
+				System.out.println("Synchronized NS print method "+i);
+				Thread.sleep(1000);
+			}
+		}
+	 
+	  void normalNS() throws InterruptedException {
+			for(int i=1 ; i<=10 ; i++) {
+				System.out.println("Normal NS method "+i);
+				Thread.sleep(1000);
+			}
+		}
+}
+
+class TThread1 extends Thread{
+	public void run() {
+		try {
+			Display1.display();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
+
+class TThread2 extends Thread{
+	public void run() {
+		try {
+			Display1.print();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
+
+class TThread3 extends Thread{
+	public void run() {
+		try {
+			Display1.normalStatic();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
+
+class TThread4 extends Thread{
+	Display1 d;
+	
+	public TThread4(Display1 d) {
+		this.d = d;
+	}
+	
+	public void run() {
+		try {
+			d.displayNS();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
+
+class TThread5 extends Thread{
+	Display1 d;
+	
+	public TThread5(Display1 d) {
+		this.d = d;
+	}
+	
+	public void run() {
+		try {
+			d.printNS();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
+
+class TThread6 extends Thread{
+	Display1 d;
+	
+	public TThread6(Display1 d) {
+		this.d = d;
+	}
+	
+	public void run() {
+		try {
+			d.normalNS();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
